@@ -13,3 +13,15 @@
 .sewp-detail-logo{max-width:390px;max-height:140px}
 .footer-grid>div:first-child{padding-top:0}
 @media(max-width:760px){.certs .logo-row{gap:18px}.certs .hubzone-home{height:39px!important}.certs .wosb-home{height:35px!important}.contract-logo img.contract-logo-large{max-width:220px;max-height:82px}}
+
+/* Update 3: normalize homepage and contract vehicle logo presentation */
+.acquisition-panel{overflow:visible}
+.certs .logo-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;min-height:90px;align-items:center}
+.vehicles .logo-row{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;min-height:90px;align-items:center}
+.certs .logo-link,.vehicles .logo-link{height:90px;width:100%;display:flex;align-items:center;justify-content:center;overflow:visible}
+.certs .logo-link img,.vehicles .logo-link img,
+.certs .home-cert-logo,.certs .hubzone-home,.certs .wosb-home{width:100%!important;height:90px!important;max-width:none!important;max-height:none!important;object-fit:contain!important;display:block}
+.contract-logo{height:126px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.contract-logo img.contract-card-logo{width:100%;height:126px;max-width:320px;max-height:126px;object-fit:contain;display:block}
+@media(max-width:1050px){.vehicles .logo-row{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:8px}.vehicles .logo-link{height:78px}.vehicles .logo-link img{height:78px!important}}
+@media(max-width:760px){.certs .logo-row{grid-template-columns:1fr 1fr}.vehicles .logo-row{grid-template-columns:repeat(2,minmax(0,1fr))}.certs .logo-link,.vehicles .logo-link{height:72px}.certs .logo-link img,.vehicles .logo-link img,.certs .home-cert-logo,.certs .hubzone-home,.certs .wosb-home{height:72px!important}.contract-logo{height:110px}.contract-logo img.contract-card-logo{height:110px;max-height:110px}}
