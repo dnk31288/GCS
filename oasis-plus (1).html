@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Use GCS's GSA OASIS+ HUBZone and WOSB prime contracts for management and advisory professional services.">
+  <title>GSA OASIS+ | GCS</title>
+  <link rel="stylesheet" href="main.css?v=8">
+  <style>
+    /* OASIS+ page-specific styles are embedded to prevent stale CSS caching on GitHub Pages. */
+    .op-page{background:#fff;color:#10233e}
+    .op-page h1,.op-page h2,.op-page h3,.op-page p{margin-top:0}
+    .op-hero{position:relative;overflow:hidden;color:#fff;background:
+      linear-gradient(90deg,rgba(3,24,48,.98) 0%,rgba(3,31,61,.95) 48%,rgba(3,31,61,.32) 76%),
+      url('capitol-mission.jpg') center right/cover no-repeat;padding:64px 0 78px}
+    .op-hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 30%,rgba(16,143,220,.28),transparent 33%);pointer-events:none}
+    .op-hero .container{position:relative;z-index:1}
+    .op-hero-grid{display:grid;grid-template-columns:minmax(0,690px) 1fr;gap:36px;align-items:center}
+    .op-logo{width:230px;background:#fff;border-radius:10px;padding:10px 16px;box-shadow:0 12px 30px rgba(0,0,0,.2);margin-bottom:18px}
+    .op-logo img{width:100%;height:62px;object-fit:contain}
+    .op-hero h1{font-size:48px;line-height:1.07;letter-spacing:-1.2px;margin-bottom:14px;max-width:680px}
+    .op-hero h1 span{color:#7ac143}
+    .op-kicker{font-size:22px;font-weight:800;color:#7ac143;margin-bottom:14px}
+    .op-lead{font-size:17px;line-height:1.6;max-width:650px;margin-bottom:18px}
+    .op-badges{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 20px}
+    .op-badge{display:inline-flex;align-items:center;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:900;letter-spacing:.03em;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);background:rgba(0,0,0,.18)}
+    .op-badge.prime{background:#5cae25;border-color:#5cae25}
+    .op-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .op-actions .btn{padding:13px 18px}
+    .op-glance-wrap{margin-top:-42px;position:relative;z-index:4}
+    .op-glance{background:linear-gradient(120deg,#041d39,#073f72);border:1px solid rgba(255,255,255,.2);border-radius:14px;box-shadow:0 16px 38px rgba(5,35,68,.2);padding:14px 18px;color:#fff}
+    .op-glance-title{text-align:center;font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;color:#dceaf5}
+    .op-glance-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .op-glance-item{display:grid;grid-template-columns:42px 1fr;gap:10px;align-items:center;padding:8px 18px;border-right:1px solid rgba(255,255,255,.25)}
+    .op-glance-item:last-child{border-right:0}
+    .op-glance-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#5cae25;font-weight:900;font-size:18px}
+    .op-glance-item strong{display:block;font-size:15px;line-height:1.2}
+    .op-glance-item span{display:block;font-size:12px;line-height:1.3;color:#dbe8f1;margin-top:3px}
+    .op-section{padding:46px 0}
+    .op-section.soft{background:#f4f7fa}
+    .op-breadcrumbs{display:flex;align-items:center;gap:8px;font-size:13px;color:#68778a;margin-bottom:24px}
+    .op-breadcrumbs a{color:#1d6399}
+    .op-section-heading{margin-bottom:22px}
+    .op-eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.09em;font-weight:900;color:#5cae25;margin-bottom:5px}
+    .op-section-heading h2{font-size:31px;line-height:1.15;color:#082a51;margin:0}
+    .op-overview-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:start}
+    .op-overview-copy p{font-size:16px;line-height:1.65;color:#34465d;margin-bottom:13px}
+    .op-facts{background:linear-gradient(145deg,#f8fbf6,#e8f1e3);border:1px solid #d8e5d1;border-radius:14px;padding:20px}
+    .op-facts h3{font-size:20px;color:#2d6b18;margin-bottom:12px}
+    .op-facts dl{margin:0}
+    .op-facts dl div{display:grid;grid-template-columns:126px 1fr;gap:12px;padding:8px 0;border-bottom:1px solid #d7e2d2;font-size:14px}
+    .op-facts dl div:last-child{border-bottom:0}
+    .op-facts dt{font-weight:800}.op-facts dd{margin:0}
+    .op-awards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .op-award{display:grid;grid-template-columns:92px 1fr;gap:18px;align-items:start;background:#fff;border-radius:14px;padding:22px;box-shadow:0 8px 24px rgba(8,42,81,.07)}
+    .op-award.hub{border:2px solid #d6b13b;background:linear-gradient(145deg,#fff,#fffaf0)}
+    .op-award.wosb{border:2px solid #4b96cf;background:linear-gradient(145deg,#fff,#f2f8fd)}
+    .op-award-mark{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;font-size:16px;font-weight:900;line-height:1.05}
+    .hub .op-award-mark{background:linear-gradient(145deg,#161616,#d6b13b)}
+    .wosb .op-award-mark{background:linear-gradient(145deg,#0d5b9b,#52ace1)}
+    .op-award h3{font-size:22px;color:#082a51;margin-bottom:2px}
+    .op-award-sub{font-size:13px;color:#4b991d;font-weight:800;margin-bottom:10px}
+    .op-award dl{margin:0}.op-award dl div{display:grid;grid-template-columns:175px 1fr;gap:10px;padding:3px 0;font-size:14px}.op-award dt{font-weight:800}.op-award dd{margin:0}
+    .op-services{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+    .op-service{background:#fff;border:1px solid #d9e2ea;border-radius:12px;padding:18px 13px;text-align:center;min-height:205px;box-shadow:0 5px 16px rgba(8,42,81,.05)}
+    .op-service-icon{width:52px;height:52px;border-radius:50%;background:#eaf5e3;color:#4b991d;display:flex;align-items:center;justify-content:center;margin:0 auto 11px;font-size:22px;font-weight:900}
+    .op-service h3{font-size:17px;line-height:1.2;color:#082a51;margin-bottom:8px}
+    .op-service p{font-size:13px;line-height:1.45;color:#526174;margin:0}
+    .op-lower-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:start}
+    .op-benefits{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .op-benefit{background:#fff;border:1px solid #dbe3ea;border-radius:11px;padding:16px}
+    .op-benefit-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#eaf5e3;color:#4b991d;font-weight:900;margin-bottom:8px}
+    .op-benefit h3{font-size:16px;color:#082a51;margin-bottom:5px}.op-benefit p{font-size:13px;line-height:1.45;color:#56667a;margin:0}
+    .op-ordering{background:linear-gradient(145deg,#f7fbff,#e8f2fb);border:1px solid #cfdfed;border-radius:14px;padding:20px}
+    .op-ordering h2{font-size:24px;color:#082a51;margin-bottom:12px}
+    .op-ordering-table{display:grid;grid-template-columns:150px 1fr;border-top:1px solid #c8d9e7}
+    .op-ordering-table div{padding:8px 10px;border-bottom:1px solid #c8d9e7;font-size:13px}
+    .op-ordering-table div:nth-child(odd){font-weight:800;color:#173a5d}
+    .op-ordering a{color:#1b639b;font-weight:800}
+    .op-resources-faq{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .op-resources{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .op-resource{display:grid;grid-template-columns:42px 1fr;gap:10px;background:#fff;border:1px solid #dbe3ea;border-radius:11px;padding:15px;min-height:120px}
+    .op-resource-icon{width:38px;height:38px;border-radius:8px;background:#eaf5e3;color:#4b991d;display:flex;align-items:center;justify-content:center;font-weight:900}
+    .op-resource strong{display:block;color:#082a51;font-size:15px;line-height:1.25}.op-resource small{display:block;color:#657386;font-size:12px;line-height:1.35;margin-top:4px}.op-resource b{display:block;color:#4b991d;font-size:12px;margin-top:8px}
+    .op-faq details{border:1px solid #d8e1e9;border-radius:9px;background:#f8fafc;margin-bottom:8px;overflow:hidden}
+    .op-faq summary{padding:13px 15px;cursor:pointer;font-size:14px;font-weight:800;color:#082a51;list-style:none}.op-faq summary::-webkit-details-marker{display:none}.op-faq summary:after{content:"+";float:right;color:#4b991d;font-size:18px}.op-faq details[open] summary:after{content:"–"}.op-faq p{padding:0 15px 13px;font-size:13px;line-height:1.45;color:#56667a;margin:0}
+    .op-related{background:#f4f7fa;padding:42px 0}
+    .op-related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .op-related-card{background:#fff;border:1px solid #d9e2ea;border-radius:11px;padding:14px;text-align:center}
+    .op-related-card img{height:56px;width:100%;object-fit:contain;margin-bottom:7px}.op-related-card strong{display:block;color:#082a51;font-size:15px}.op-related-card span{display:block;color:#68778a;font-size:12px;margin-top:3px}
+    .op-cta{background:linear-gradient(120deg,#031b35,#073f72);color:#fff;padding:34px 0}
+    .op-cta-grid{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}.op-cta h2{font-size:28px;margin-bottom:5px}.op-cta p{font-size:15px;max-width:700px;margin:0}
+    @media(max-width:1100px){.op-services{grid-template-columns:repeat(3,1fr)}.op-glance-grid{grid-template-columns:repeat(2,1fr)}.op-glance-item:nth-child(2){border-right:0}.op-overview-grid,.op-lower-grid,.op-resources-faq{grid-template-columns:1fr}}
+    @media(max-width:760px){.op-hero{padding:48px 0 72px;background-position:65% center}.op-hero-grid{grid-template-columns:1fr}.op-hero h1{font-size:38px}.op-kicker{font-size:19px}.op-logo{width:200px}.op-glance-grid{grid-template-columns:1fr}.op-glance-item{border-right:0;border-bottom:1px solid rgba(255,255,255,.25)}.op-glance-item:last-child{border-bottom:0}.op-awards,.op-services,.op-benefits,.op-resources,.op-related-grid{grid-template-columns:1fr}.op-award{grid-template-columns:1fr}.op-award dl div{grid-template-columns:1fr}.op-ordering-table{grid-template-columns:1fr}.op-section-heading h2{font-size:27px}.op-cta-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html"><img src="gcs-logo.png" alt="GCS"></a>
+    <button class="menu-button" aria-label="Open menu">☰</button>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a><a href="capabilities.html">Capabilities</a><a href="customers.html">Customers</a><a href="experience.html">Experience</a><a href="contracts.html" class="active">Contract Vehicles</a><a href="about.html">About GCS</a><a href="news.html">News &amp; Insights</a><a href="careers.html">Careers</a><a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main class="op-page">
+  <section class="op-hero">
+    <div class="container op-hero-grid">
+      <div>
+        <div class="op-logo"><img src="oasis-plus.png" alt="GSA OASIS+"></div>
+        <h1>Delivering Mission-Focused Professional Services Through <span>GSA OASIS+</span></h1>
+        <div class="op-kicker">Best-in-Class Professional Services Acquisition</div>
+        <p class="op-lead">GCS provides Federal agencies streamlined access to experienced management and advisory support through two prime OASIS+ awards.</p>
+        <div class="op-badges"><span class="op-badge prime">Prime Contract</span><span class="op-badge">HUBZone</span><span class="op-badge">WOSB</span><span class="op-badge">Management &amp; Advisory</span></div>
+        <div class="op-actions"><a class="btn primary" href="contact.html">Contact Our OASIS+ Team →</a><a class="btn" href="#resources">View OASIS+ Resources ↓</a></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="op-glance-wrap">
+    <div class="container">
+      <div class="op-glance">
+        <div class="op-glance-title">OASIS+ at a Glance</div>
+        <div class="op-glance-grid">
+          <div class="op-glance-item"><div class="op-glance-icon">★</div><div><strong>Best-in-Class</strong><span>GSA-vetted acquisition vehicle</span></div></div>
+          <div class="op-glance-item"><div class="op-glance-icon">⚡</div><div><strong>Flexible Ordering</strong><span>Task orders for complex services</span></div></div>
+          <div class="op-glance-item"><div class="op-glance-icon">▦</div><div><strong>Governmentwide</strong><span>Available to Federal agencies</span></div></div>
+          <div class="op-glance-item"><div class="op-glance-icon">✓</div><div><strong>Two GCS Awards</strong><span>HUBZone and WOSB primes</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="op-section">
+    <div class="container">
+      <div class="op-breadcrumbs"><a href="index.html">Home</a><span>›</span><a href="contracts.html">Contract Vehicles</a><span>›</span><strong>GSA OASIS+</strong></div>
+      <div class="op-overview-grid">
+        <div class="op-overview-copy">
+          <div class="op-section-heading"><div class="op-eyebrow">GCS OASIS+ Overview</div><h2>A Best-in-Class Path to Mission Success</h2></div>
+          <p>GSA OASIS+ is a governmentwide suite of multiple-award indefinite-delivery, indefinite-quantity contracts designed to streamline the acquisition of complex professional services. Through the Management &amp; Advisory Domain, GCS supports program and project management, strategic planning, organizational transformation, acquisition support, governance, performance management, and business process improvement.</p>
+          <p>Our two prime awards provide access through HUBZone and WOSB acquisition pathways while supporting Federal socioeconomic contracting goals.</p>
+        </div>
+        <aside class="op-facts">
+          <h3>Contract Facts</h3>
+          <dl><div><dt>Vehicle</dt><dd>GSA OASIS+</dd></div><div><dt>Status</dt><dd>Prime Contractor</dd></div><div><dt>Domain</dt><dd>Management &amp; Advisory</dd></div><div><dt>Tracks</dt><dd>HUBZone and WOSB</dd></div><div><dt>Contract Type</dt><dd>Best-in-Class Governmentwide IDIQ</dd></div><div><dt>Ordering Scope</dt><dd>Federal Government</dd></div></dl>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="op-section soft">
+    <div class="container">
+      <div class="op-section-heading"><div class="op-eyebrow">Prime Contract Awards</div><h2>GCS OASIS+ Awards</h2></div>
+      <div class="op-awards">
+        <article class="op-award hub"><div class="op-award-mark">HUB<br>Zone</div><div><h3>HUBZone Award</h3><div class="op-award-sub">Prime Contract · Management &amp; Advisory Domain</div><dl><div><dt>Master Contract Number</dt><dd>47QRCA25DH014</dd></div><div><dt>Period of Performance</dt><dd>04/16/2025 – 04/15/2035</dd></div><div><dt>UEI</dt><dd>W3BEMK548CF3</dd></div><div><dt>CAGE Code</dt><dd>1PJR2</dd></div></dl></div></article>
+        <article class="op-award wosb"><div class="op-award-mark">WOSB</div><div><h3>Woman-Owned Small Business Award</h3><div class="op-award-sub">Prime Contract · Management &amp; Advisory Domain</div><dl><div><dt>Master Contract Number</dt><dd>47QRCA25DH060</dd></div><div><dt>Period of Performance</dt><dd>04/16/2025 – 04/15/2035</dd></div><div><dt>UEI</dt><dd>W3BEMK548CF3</dd></div><div><dt>CAGE Code</dt><dd>1PJR2</dd></div></dl></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="op-section">
+    <div class="container">
+      <div class="op-section-heading"><div class="op-eyebrow">Management &amp; Advisory Domain</div><h2>Services Available Through OASIS+</h2></div>
+      <div class="op-services">
+        <article class="op-service"><div class="op-service-icon">PM</div><h3>Program Management</h3><p>Program, project, portfolio, schedule, risk, quality, and performance oversight.</p></article>
+        <article class="op-service"><div class="op-service-icon">MC</div><h3>Management Consulting</h3><p>Strategic planning, analysis, policy support, and advisory services.</p></article>
+        <article class="op-service"><div class="op-service-icon">OT</div><h3>Organizational Transformation</h3><p>Change management, modernization planning, and stakeholder engagement.</p></article>
+        <article class="op-service"><div class="op-service-icon">GC</div><h3>Governance &amp; Compliance</h3><p>Governance frameworks, risk controls, compliance, and policy implementation.</p></article>
+        <article class="op-service"><div class="op-service-icon">AS</div><h3>Acquisition Support</h3><p>Planning, documentation, market research, and procurement program support.</p></article>
+        <article class="op-service"><div class="op-service-icon">PI</div><h3>Process Improvement</h3><p>Workflow optimization, performance measurement, and continuous improvement.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="op-section soft">
+    <div class="container op-lower-grid">
+      <div>
+        <div class="op-section-heading"><div class="op-eyebrow">Why GCS</div><h2>Why Agencies Select GCS Under OASIS+</h2></div>
+        <div class="op-benefits">
+          <article class="op-benefit"><div class="op-benefit-icon">◎</div><h3>Mission-Focused Delivery</h3><p>Practical support aligned to agency priorities, outcomes, and performance expectations.</p></article>
+          <article class="op-benefit"><div class="op-benefit-icon">✓</div><h3>Certified Quality</h3><p>ISO 9001:2015-certified quality management and disciplined oversight.</p></article>
+          <article class="op-benefit"><div class="op-benefit-icon">★</div><h3>Socioeconomic Value</h3><p>HUBZone and WOSB prime awards support small business participation goals.</p></article>
+          <article class="op-benefit"><div class="op-benefit-icon">25+</div><h3>Federal Experience</h3><p>More than two decades supporting defense and civilian agency missions.</p></article>
+        </div>
+      </div>
+      <aside class="op-ordering">
+        <h2>Ordering Information</h2>
+        <div class="op-ordering-table"><div>Ordering Agency</div><div>Federal agencies</div><div>Contract Type</div><div>Best-in-Class Governmentwide IDIQ</div><div>Domain</div><div>Management &amp; Advisory</div><div>HUBZone Contract</div><div>47QRCA25DH014</div><div>WOSB Contract</div><div>47QRCA25DH060</div><div>Program Manager</div><div>David Harmon</div><div>Contract Manager</div><div>Joaneane Smith</div><div>Email</div><div><a href="mailto:contracts@globalcommserv.com">contracts@globalcommserv.com</a></div><div>Phone</div><div><a href="tel:15043081308">504-308-1308</a></div></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="op-section" id="resources">
+    <div class="container op-resources-faq">
+      <div>
+        <div class="op-section-heading"><div class="op-eyebrow">Downloads &amp; Information</div><h2>OASIS+ Resources</h2></div>
+        <div class="op-resources"><a class="op-resource" href="contact.html"><div class="op-resource-icon">PDF</div><div><strong>OASIS+ Capability Statement</strong><small>Request the latest GCS OASIS+ capabilities overview.</small><b>Request →</b></div></a><a class="op-resource" href="contact.html"><div class="op-resource-icon">INFO</div><div><strong>Contract Information</strong><small>Contract numbers, points of contact, and acquisition details.</small><b>Request →</b></div></a><a class="op-resource" href="https://www.gsa.gov/oasis-plus" target="_blank" rel="noopener"><div class="op-resource-icon">GSA</div><div><strong>GSA OASIS+ Information</strong><small>Visit GSA's official OASIS+ program page.</small><b>Visit →</b></div></a><a class="op-resource" href="contact.html"><div class="op-resource-icon">M&amp;A</div><div><strong>Management &amp; Advisory Overview</strong><small>Discuss GCS services available through the domain.</small><b>Contact →</b></div></a></div>
+      </div>
+      <div>
+        <div class="op-section-heading"><div class="op-eyebrow">Common Questions</div><h2>Frequently Asked Questions</h2></div>
+        <div class="op-faq"><details><summary>What services are available through GCS's OASIS+ contracts?</summary><p>Management and advisory services include program management, strategic planning, acquisition support, organizational transformation, governance, performance management, and process improvement.</p></details><details><summary>Which OASIS+ domain does GCS hold?</summary><p>GCS holds prime contracts in the Management &amp; Advisory Domain under the HUBZone and WOSB tracks.</p></details><details><summary>Who may use OASIS+?</summary><p>OASIS+ is available to Federal agencies under applicable GSA ordering procedures.</p></details><details><summary>How do I discuss an OASIS+ requirement with GCS?</summary><p>Contact contracts@globalcommserv.com or 504-308-1308.</p></details></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="op-related">
+    <div class="container">
+      <div class="op-section-heading"><div class="op-eyebrow">Additional Acquisition Pathways</div><h2>Related Contract Vehicles</h2></div>
+      <div class="op-related-grid"><a class="op-related-card" href="gsa-mas.html"><img src="card-gsa-mas.png" alt="GSA MAS"><strong>GSA MAS</strong><span>IT and professional services</span></a><a class="op-related-card" href="seaport-nxg.html"><img src="card-seaport-nxg.png" alt="SeaPort NxG"><strong>SeaPort NxG</strong><span>Navy engineering and mission support</span></a><a class="op-related-card" href="sewp-vi.html"><img src="card-sewp-vi.png" alt="NASA SEWP VI"><strong>NASA SEWP VI</strong><span>IT products and related services</span></a><a class="op-related-card" href="mda-shield.html"><img src="card-mda-shield.png" alt="MDA SHIELD"><strong>MDA SHIELD</strong><span>Missile defense mission support</span></a></div>
+    </div>
+  </section>
+
+  <section class="op-cta"><div class="container op-cta-grid"><div><div class="op-eyebrow">Ready to Use OASIS+?</div><h2>Let's Discuss Your Requirement</h2><p>Our Business Development team can help determine whether OASIS+ is the right acquisition vehicle and assist with the ordering process.</p></div><a class="btn primary" href="contact.html">Contact Our OASIS+ Team →</a></div></section>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><h4>Global Commerce &amp; Services, LLC</h4><p>Mission-focused IT and professional services for Federal, State, and Local Government.</p></div><div><h4>Explore</h4><a href="capabilities.html">Capabilities</a><a href="customers.html">Customers</a><a href="experience.html">Experience</a></div><div><h4>Company</h4><a href="about.html">About GCS</a><a href="news.html">News &amp; Insights</a><a href="careers.html">Careers</a></div><div><h4>Contact</h4><a href="mailto:contracts@globalcommserv.com">contracts@globalcommserv.com</a><a href="tel:15043081308">504-308-1308</a><a href="contact.html">Contact GCS</a></div></div><div class="container footer-bottom">© 2026 Global Commerce &amp; Services, LLC. All rights reserved.</div></footer>
+<script src="main.js"></script>
+</body>
+</html>
