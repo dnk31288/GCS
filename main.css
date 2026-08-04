@@ -105,3 +105,17 @@
 .compact-resources-panel h2{margin:4px 0 12px}
 @media(max-width:1050px){.contracts-support-grid{grid-template-columns:1fr}}
 @media(max-width:760px){.contracts-portfolio{padding-top:40px;padding-bottom:46px}.contracts-portfolio-heading p{font-size:16px}.contracts-support-grid{margin-top:24px;gap:20px}.compact-support-panel,.compact-resources-panel{padding:20px}}
+
+
+/* Update 13: streamlined contract comparison table */
+.portfolio-table{min-width:760px;font-size:16px;table-layout:fixed}
+.portfolio-table th,.portfolio-table td{padding:17px 18px;vertical-align:middle}
+.portfolio-table th:nth-child(1),.portfolio-table td:nth-child(1){width:25%}
+.portfolio-table th:nth-child(2),.portfolio-table td:nth-child(2){width:16%}
+.portfolio-table th:nth-child(3),.portfolio-table td:nth-child(3){width:31%}
+.portfolio-table th:nth-child(4),.portfolio-table td:nth-child(4){width:13%}
+.portfolio-table th:nth-child(5),.portfolio-table td:nth-child(5){width:15%}
+.contract-name-link{display:inline-block;color:#082a51;font-weight:800;text-decoration:none;transition:color .18s ease,transform .18s ease}
+.contract-name-link:hover,.contract-name-link:focus-visible{color:#4c9f16;transform:translateX(3px);text-decoration:underline;text-underline-offset:4px}
+.contract-name-link:focus-visible{outline:2px solid #7ac143;outline-offset:4px;border-radius:2px}
+@media(max-width:760px){.portfolio-table{min-width:700px;font-size:15px}.portfolio-table th,.portfolio-table td{padding:14px 12px}}
