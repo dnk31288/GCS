@@ -158,3 +158,41 @@
   .certs .cert-logo-wrap .hubzone-home{max-width:145px!important;max-height:46px!important}
   .certs .cert-logo-wrap .wosb-home{max-width:170px!important;max-height:48px!important}
 }
+
+/* Update 15: use clean normalized certification artwork with strict containment */
+.certs .logo-row{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,260px));
+  align-items:center;
+  justify-content:center;
+  gap:28px;
+  min-height:92px;
+  padding:8px 14px 12px;
+}
+.certs .cert-logo-wrap{
+  width:100%;
+  height:76px;
+  min-width:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.certs .cert-logo-wrap .home-cert-logo,
+.certs .cert-logo-wrap .hubzone-home,
+.certs .cert-logo-wrap .wosb-home{
+  display:block;
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  margin:0!important;
+  padding:0!important;
+  transform:none!important;
+}
+@media(max-width:760px){
+  .certs .logo-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-inline:4px;min-height:76px}
+  .certs .cert-logo-wrap{height:58px}
+}
